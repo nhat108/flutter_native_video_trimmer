@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> trimVideo() async {
     final imagePicker = ImagePicker();
-    final video = await imagePicker.getVideo(source: ImageSource.camera);
+    final video = await imagePicker.getVideo(source: ImageSource.gallery);
     // Platform messages may fail, so we use a try/catch PlatformException.
     final trimmedPath = await NativeVideoTrimmer.trim(video.path);
     print("Trimmed video $trimmedPath");
